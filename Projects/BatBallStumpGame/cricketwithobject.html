@@ -1,0 +1,153 @@
+<!-- 
+    GAME RULES:
+    Bat defeats Ball
+    Ball defeats Stump
+    Stump defeats Bat
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Game</title>
+    <link rel="stylesheet" href="cricket.css">
+</head>
+
+<body>
+
+    <div id="bag-image">
+
+        <img id="cricket" src="images/360_F_77810263_zgIAUTTlwF0Bl8ZCxHsofgTzXlZXy9Nn.jpg" alt="image">
+        
+        <h2 id="heading">BAT BALL STUMP GAME</h2>
+        <h3 id="userch"> </h3>
+        <h3 id="computerch"> </h3>
+        <h3 id="result"> </h3>
+        <h4 id="totalscore"></h4>
+
+
+        <button id ="btn1"class="btn" onclick="
+
+        document.querySelector('#userch').innerHTML = 'You chose to Bat'
+        let computerchoice = computerselect();
+        document.querySelector('#computerch').innerHTML = `Computer chose to ${computerchoice}`;
+        getResult('Bat',computerchoice);
+        document.querySelector('#totalscore').innerHTML = `${score.displayScore()}`
+
+        ">BAT 🏏</button>
+
+
+        <button id ="btn2" class="btn" onclick="
+
+        document.querySelector('#userch').innerHTML = 'You chose to Ball'
+        computerchoice = computerselect();
+        document.querySelector('#computerch').innerHTML = `Computer chose to ${computerchoice}`;
+        getResult('Ball',computerchoice);
+        document.querySelector('#totalscore').innerHTML = `${score.displayScore()}`
+        
+
+        ">BALL⚾</button>
+
+
+        <button id ="btn3"class="btn" onclick="
+
+        document.querySelector('#userch').innerHTML = 'You chose to Stump'
+        computerchoice = computerselect();
+        document.querySelector('#computerch').innerHTML = `Computer chose to ${computerchoice}`;
+        getResult('Stump',computerchoice);
+        document.querySelector('#totalscore').innerHTML = `${score.displayScore()}`
+
+        "> STUMP <img id="stump" src="images/cricket-stumps-503502.png" alt=""></button>
+
+    </div>
+    
+    <script>
+
+        let score = {
+            win : 0,
+            lost : 0,
+            tie : 0,
+            displayScore : function(){
+                return ` Current score is win: ${score.win}  lost:${score.lost}  tie:${score.tie}`
+            }
+        };
+
+        
+        function computerselect(){
+            let randomnumber = Math.random() * 3;
+            if(randomnumber > 0 && randomnumber <= 1){
+                return 'Bat';
+            }
+            else if(randomnumber > 1 && randomnumber <= 2){
+                return 'Ball';
+            }
+            else {
+                return 'Stump';
+            }
+        }
+
+        function getResult(usermov,computermov){
+
+            if(usermov === 'Bat'){
+                if (computermov === 'Bat'){
+                    score.tie++;
+                    document.querySelector('#result').innerHTML = ` It's a tie `
+                }   
+
+                else if(computermov === 'Ball'){
+                    score.win++;
+                    document.querySelector('#result').innerHTML = `Congratulations! You Won`
+                }
+
+                else if(computermov === 'Stump'){
+                    score.lost++;
+                    document.querySelector('#result').innerHTML = `Sorry, You Lost`
+                }
+
+            }
+
+            else if(usermov === 'Ball'){
+
+                if (computermov === 'Bat'){
+                    score.lost++;
+                    document.querySelector('#result').innerHTML = `Sorry, You Lost`
+                }
+
+                else if(computermov === 'Ball'){
+                    score.tie++;
+                    document.querySelector('#result').innerHTML = ` It's a tie `
+                }
+
+                else if(computermov === 'Stump'){
+                    score.win++;
+                    document.querySelector('#result').innerHTML = `Congratulations! You Won`
+                }
+
+            }
+
+            else if(usermov === 'Stump'){
+
+                if (computermov=== 'Bat'){
+                    score.win++;
+                    document.querySelector('#result').innerHTML = `Congratulations! You Won`
+                }
+
+                else if(computermov === 'Ball'){
+                    score.lost++;
+                    document.querySelector('#result').innerHTML = ` Sorry, You Lost `
+                }
+
+                else if(computermov === 'Stump'){
+                    score.tie++;
+                    document.querySelector('#result').innerHTML = ` It's a tie `
+                }
+                
+            }
+        }
+    </script>
+
+
+</body>
+</html>

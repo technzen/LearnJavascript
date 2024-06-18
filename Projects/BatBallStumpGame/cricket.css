@@ -1,0 +1,102 @@
+#cricket{
+        margin-left: 185px;
+        width: 70%;
+        border: 10px solid black;
+        
+
+}
+
+ #bag-image{
+    position: relative;
+}
+
+#totalscore{
+
+    position: absolute;
+    top: 2%;
+    left: 65%;
+    background-color: rgb(207, 149, 77);
+    padding-right: 2px;
+}
+
+#heading{
+    position: absolute;
+    top: 15%;
+    left: 39%;
+    text-decoration: underline;
+    background-color: antiquewhite;
+    padding: 5px;
+}
+
+#userch {
+
+    position: absolute;
+    top: 25%;
+    left:39% ;
+    color: blue;
+    background-color: rgb(236, 242, 240);
+    /* padding: 2px; */
+}
+
+#computerch {
+
+    position: absolute;
+    top: 30%;
+    left:39% ;
+    color: blue;
+    background-color: rgb(236, 242, 240);
+    /* padding: 2px; */
+}
+
+#result {
+
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    color:blue;
+    /* text-decoration: underline; */
+    background-color: rgb(249, 248, 248);
+    /* border: 2px dotted blue; */
+    /* padding: 4px; */
+}
+
+#btn1{
+    position: absolute;
+    top: 76%;
+    left:38%;
+}
+
+#btn2{
+    position: absolute;
+    top: 76%;
+    left:46%;
+}
+
+#btn3{
+    position: absolute;
+    top: 76%;
+    left:54%;
+    padding-top: 2px;
+    size: 18px;
+}
+.btn{
+    /* position: absolute;
+    top: 76%;
+    left: 36%; */
+    margin:20px;
+    padding:10px;
+    border: 2px solid rgb(18, 19, 19);
+    font-size: small;
+    background-color: rgb(17, 58, 221);
+    color: azure;
+    size:20px ;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+#stump{
+    height:16px;
+    margin-top: 7px;
+}
+
